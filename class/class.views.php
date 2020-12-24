@@ -3,7 +3,6 @@ class views{
 
 public function getInfoJson($jsonInfo) {
     $obj = json_decode(file_get_contents($jsonInfo), true);
-    unset($_SESSION['infoJson']);
     if (!isset($_SESSION['infoJson'])) {
         $_SESSION['infoJson'] = $obj;
         $_SESSION['infoCity'] = $this->getInfo($_SESSION['infoJson'], "Ciudad");
