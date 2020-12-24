@@ -3,9 +3,6 @@ $(document).ready(function(){
     $("button").click(function(e){
         console.clear();
         e.preventDefault();
-        var selectCiudad = $('#selectCiudad').val();
-        var selectTipo = $('#selectTipo').val();
-        var rangoPrecio = $('#rangoPrecio').val();
         let url = "ajax/ajaxSearch.php?c="+$('#selectCiudad').val()+"&t="+$('#selectTipo').val()+"&r="+$('#rangoPrecio').val();
         $.get(url, function(data, status){
             if (status=="success") {
